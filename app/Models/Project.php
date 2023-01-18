@@ -18,7 +18,12 @@ class Project extends Model
         return $project_slug;
     }
 
-    public function Category(): BelongsTo
+    /**
+     * Get all of the posts for the Category
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function category(): BelongsTo
     {
         return $this->belongsTo(Category::class);
     }
