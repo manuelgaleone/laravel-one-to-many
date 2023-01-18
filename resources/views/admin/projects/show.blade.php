@@ -5,7 +5,7 @@
     <div class="text-center mb-4">
         <h1 class=" text-center mb-0 text-gray-800 py-4">{{$project->title}}</h1>
     </div>
-    <img src="{{asset('storage/' . $project->thumb)}}" alt="{{$project->title}}">
+    <img src="{{asset('storage/' . $project->image)}}" alt="{{$project->title}}">
     <p class="my-4">
         {{$project->content}}
     </p>

@@ -19,9 +19,7 @@
         <input type="text" name="title" id="title" class="form-control" value="{{old('title')}}" placeholder="Il mio primo progetto" aria-describedby="helpId" required>
     </div>
     <div class="mb-3">
-        <div class="d-flex">
-            <input type="file" class="form-control" name="thumb" id="thumb" placeholder="Aggiungi un'immagine" aria-describedby="coverImgHelper">
-        </div>
+        <input type="file" class="form-control" name="image" id="image" placeholder="Aggiungi un'immagine" aria-describedby="coverImgHelper">
     </div>
     <div class="mb-3">
         <textarea class="form-control" name="content" id="content" placeholder="Oggi sono andato al mare..." rows="3" required>{{old('content')}}</textarea>

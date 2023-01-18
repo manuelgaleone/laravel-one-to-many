@@ -38,14 +38,15 @@ class ProjectController extends Controller
      */
     public function store(StoreProjectRequest $request)
     {
+        /* dd($request->all()); */
         //validazione dei dati
         $val_data = $request->validated();
 
-        if ($request->hasFile('thumb')) {
-            $image = Storage::put('uploads', $val_data['thumb']);
-            //dd($cover_image);
-            // replace the value of cover_image inside $val_data
-            $val_data['thumb'] = $image;
+        if ($request->hasFile('image')) {
+            $image = Storage::put('uploads', $request->image);
+            //dd($image);
+
+            $val_data['image'] = $image;
         }
 
         //genera slug
@@ -53,11 +54,9 @@ class ProjectController extends Controller
         $val_data['slug'] = $project_slug;
         //creo il post
 
-
-
         Project::create($val_data);
         //redirect
-        return to_route('admin.projects.index')->with('message', 'Post added correctly!');
+        return to_route('admin.projects.index');
     }
 
     /**
@@ -93,16 +92,16 @@ class ProjectController extends Controller
     {
         $val_data = $request->validated();
 
-        if ($request->hasFile('thumb')) {
+        if ($request->hasFile('image')) {
 
-            if ($project->thumb) {
-                Storage::delete($project->thumb);
+            if ($project->image) {
+                Storage::delete($project->image);
             }
 
-            $image = Storage::put('uploads', $val_data['thumb']);
+            $image = Storage::disk('public')->put('uploads', $val_data['image']);
             //dd($cover_image);
             // replace the value of cover_image inside $val_data
-            $val_data['thumb'] = $image;
+            $val_data['image'] = $image;
         }
 
         $project->update($val_data);
