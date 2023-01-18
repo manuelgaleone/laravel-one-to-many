@@ -9,7 +9,7 @@
         <div class="row justify-content-center">
             @foreach ($projects as $project)
             <div class="card m-3" style="width: 18rem;">
-                <img class="card-img-top pt-3" src="{{asset('storage/' . $project->image)}}" alt="Card image cap">
+                <img class="card-img-top pt-3" src="{{asset('storage/' . $project->image)}}">
                 <div class="card-body">
                     <h5 class="card-title">{{$project->title}}</h5>
                     <p class="card-text">{{$project->content}}</p>

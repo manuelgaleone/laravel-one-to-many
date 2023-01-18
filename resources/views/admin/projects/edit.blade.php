@@ -13,7 +13,7 @@
     </ul>
 </div>
 @endif
-<form action="{{route('admin.projects.update', $project->slug)}}" method="post" class="card p-3">
+<form action="{{route('admin.projects.update', $project->slug)}}" method="post" class="card p-3" enctype="multipart/form-data">
     @csrf
     @METHOD('PUT')
     <div class="mb-3">
@@ -24,7 +24,7 @@
     </div>
     <div class="mb-3">
         <div class="d-flex align-items-center gap-4">
-            <img width="200px" src="{{asset('storage/' . $project->image)}}" alt="Card image cap">
+            <img width="200px" src="{{asset('storage/' . $project->image)}}">
             <input type="file" class="form-control" name="image" id="image" placeholder="Aggiungi un'immagine" aria-describedby="coverImgHelper">
         </div>
     </div>
