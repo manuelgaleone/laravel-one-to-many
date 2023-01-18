@@ -29,7 +29,7 @@ class ProjectController extends Controller
     public function create()
     {
         $categories = Category::all();
-        dd($categories);
+        //dd($categories);
         return view('admin.projects.create', compact('categories'));
     }
 
