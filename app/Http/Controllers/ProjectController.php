@@ -98,7 +98,7 @@ class ProjectController extends Controller
                 Storage::delete($project->image);
             }
 
-            $image = Storage::disk('public')->put('uploads', $val_data['image']);
+            $image = Storage::put('uploads', $val_data['image']);
             //dd($cover_image);
             // replace the value of cover_image inside $val_data
             $val_data['image'] = $image;
