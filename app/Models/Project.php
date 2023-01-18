@@ -10,7 +10,7 @@ use Illuminate\Support\Str;
 class Project extends Model
 {
 
-    protected $fillable = ['title', 'image', 'thumb', 'content', 'slug'];
+    protected $fillable = ['title', 'image', 'thumb', 'content', 'slug', 'category_id'];
 
     public static function generateSlug($title)
     {
