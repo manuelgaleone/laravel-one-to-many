@@ -17,8 +17,9 @@ class ProjectController extends Controller
      */
     public function index()
     {
+        $categories = Category::all();
         $projects = Project::orderByDesc('id')->get();
-        return view('admin.projects.index', compact('projects'));
+        return view('admin.projects.index', compact('projects', 'categories'));
     }
 
     /**
@@ -81,7 +82,8 @@ class ProjectController extends Controller
      */
     public function edit(Project $project)
     {
-        return view('admin.projects.edit', compact('project'));
+        $categories = Category::all();
+        return view('admin.projects.edit', compact('project', 'categories'));
     }
 
     /**

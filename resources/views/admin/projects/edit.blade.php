@@ -23,6 +23,15 @@
         <textarea class="form-control" name="content" id="content" rows="3" required>{{$project->content}}</textarea>
     </div>
     <div class="mb-3">
+        <select class="form-select" name="category_id" id="category_id" aria-label="Default select example">
+            <option disabled selected>Scegli una Categoria</option>
+            @foreach ($categories as $category) {
+            <option value="{{$category->id}}" {{$category->id == old('category_id', $project->category->id) ? 'selected' : ''}}>{{$category->name}}</option>
+            }
+            @endforeach
+        </select>
+    </div>
+    <div class="mb-3">
         <div class="d-flex align-items-center gap-4">
             <img width="200px" src="{{asset('storage/' . $project->image)}}">
             <input type="file" class="form-control" name="image" id="image" placeholder="Aggiungi un'immagine" aria-describedby="coverImgHelper">

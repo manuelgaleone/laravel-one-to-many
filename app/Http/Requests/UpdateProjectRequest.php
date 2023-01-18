@@ -27,6 +27,7 @@ class UpdateProjectRequest extends FormRequest
             'title' => 'required|min:10|max:100',
             'content' => 'required',
             'image' => 'nullable|image|max:500',
+            'category_id' => 'nullable|exists:categories,id',
             'slug' => 'unique:projects,slug',
             'content' => 'required',
             'thumb' => 'nullable'
