@@ -9,8 +9,8 @@
     <p class="my-4">
         {{$project->content}}
     </p>
-    <h6>
+    <!-- <h6>
         Category:{{$project->category->name ? $project->category->name : 'Non categorizzato!'}}
-    </h6>
+    </h6> -->
 </div>
 @endsection
